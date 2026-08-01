@@ -1,0 +1,107 @@
+﻿/* =========================================================
+   Gruppo Veronesi — Stylesheet completo
+========================================================= */
+
+/* =========================
+   Variabili globali
+========================= */
+:root {
+  --primary: #2a6f3a;
+  --accent: #f2c94c;
+  --bg: #f8faf8;
+  --surface: #ffffff;
+  --muted: #6b6b6b;
+  --text: #1f2933;
+  --border: #e9e9e9;
+  --shadow: 0 6px 18px rgba(31, 41, 51, 0.06);
+  --focus: 3px solid rgba(42, 111, 58, 0.46);
+  --focus-header: 3px solid rgba(42, 111, 58, 0.28);
+  --premium-border: linear-gradient(
+    145deg,
+    rgba(242, 201, 76, 0.62),
+    rgba(42, 111, 58, 0.3) 42%,
+    rgba(42, 111, 58, 0.16) 72%,
+    rgba(255, 255, 255, 0.82)
+  );
+  --premium-border-hover: linear-gradient(
+    145deg,
+    rgba(242, 201, 76, 0.82),
+    rgba(42, 111, 58, 0.48) 45%,
+    rgba(42, 111, 58, 0.24) 74%,
+    rgba(255, 255, 255, 0.9)
+  );
+  --container-max: 1300px;
+}
+
+/* =========================
+   Reset
+========================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+  overflow-x: clip;
+  scroll-behavior: smooth;
+}
+
+@supports not (overflow: clip) {
+  html,
+  body {
+    overflow-x: hidden;
+  }
+}
+
+body {
+  font-family:
+    Inter,
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    Roboto,
+    Arial,
+    sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* =========================
+   Layout
+========================= */
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 1rem 4rem;
+  min-width: 0;
+}
+
+section {
+  padding: 4.5rem 0;
+}
+
+section h2 {
+  text-align: center;
+  color: var(--primary);
+  margin-bottom: 1rem;
+  font-size: 2.5rem;
+}
+
+main section h2::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 4px;
+  background-color: var(--accent);
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+

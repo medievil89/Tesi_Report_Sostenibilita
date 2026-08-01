@@ -1,0 +1,25 @@
+﻿/* =========================
+   Footer
+========================= */
+.site-footer {
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+  padding: 1.2rem 0;
+  text-align: center;
+  color: var(--muted);
+}
+
+.footer-logo {
+  display: block;
+  width: min(190px, 100%);
+  height: auto;
+  margin: 0 auto 0.45rem;
+}
+
+.footer-nav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+}
+
