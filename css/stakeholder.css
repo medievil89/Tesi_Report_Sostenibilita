@@ -299,23 +299,23 @@
   --node-delay: -0.4s;
 }
 .stakeholder-node--2 {
-  --node-x: 74%;
-  --node-y: 16%;
+  --node-x: 69%;
+  --node-y: 13.63%;
   --node-delay: -1.8s;
 }
 .stakeholder-node--3 {
-  --node-x: 88%;
-  --node-y: 36%;
+  --node-x: 84.86%;
+  --node-y: 33.27%;
   --node-delay: -3.2s;
 }
 .stakeholder-node--4 {
-  --node-x: 84%;
-  --node-y: 65%;
+  --node-x: 84.86%;
+  --node-y: 66.73%;
   --node-delay: -0.9s;
 }
 .stakeholder-node--5 {
-  --node-x: 68%;
-  --node-y: 85%;
+  --node-x: 69%;
+  --node-y: 86.37%;
   --node-delay: -2.5s;
 }
 .stakeholder-node--6 {
@@ -324,23 +324,23 @@
   --node-delay: -4.1s;
 }
 .stakeholder-node--7 {
-  --node-x: 32%;
-  --node-y: 85%;
+  --node-x: 31%;
+  --node-y: 86.37%;
   --node-delay: -1.2s;
 }
 .stakeholder-node--8 {
-  --node-x: 16%;
-  --node-y: 65%;
+  --node-x: 15.14%;
+  --node-y: 66.73%;
   --node-delay: -3.7s;
 }
 .stakeholder-node--9 {
-  --node-x: 12%;
-  --node-y: 36%;
+  --node-x: 15.14%;
+  --node-y: 33.27%;
   --node-delay: -2.1s;
 }
 .stakeholder-node--10 {
-  --node-x: 26%;
-  --node-y: 16%;
+  --node-x: 31%;
+  --node-y: 13.63%;
   --node-delay: -4.6s;
 }
 
@@ -394,8 +394,9 @@
 
 @media (max-width: 600px) {
   .stakeholder-section {
-    min-height: 100svh;
-    padding: 1.25rem 0 3.25rem;
+    min-height: auto;
+    justify-content: flex-start;
+    padding: clamp(3.5rem, 12vw, 4.5rem) 0 clamp(3.5rem, 12vw, 4.5rem);
   }
 
   .stakeholder-intro {
@@ -421,18 +422,21 @@
 
   .stakeholder-map {
     width: min(100%, 390px);
-    height: clamp(520px, 64svh, 590px);
-    margin-top: 0.25rem;
+    height: auto;
+    aspect-ratio: 1;
+    margin-top: clamp(1.5rem, 7vw, 2.5rem);
   }
 
   .stakeholder-map::before {
     width: 79%;
-    height: 79%;
+    height: auto;
+    aspect-ratio: 1;
   }
 
   .stakeholder-map::after {
     width: 46%;
-    height: 46%;
+    height: auto;
+    aspect-ratio: 1;
   }
 
   .stakeholder-center {
@@ -456,7 +460,7 @@
   .stakeholder-node {
     width: clamp(66px, 19vw, 74px);
     padding: 0.45rem;
-    font-size: clamp(0.59rem, 2.7vw, 0.66rem);
+    font-size: clamp(0.56rem, 2.5vw, 0.62rem);
     line-height: 1.15;
     box-shadow: 0 8px 24px rgba(31, 77, 46, 0.12);
   }
@@ -470,12 +474,24 @@
     height: 7px;
     box-shadow: 0 0 0 4px rgba(242, 201, 76, 0.14);
   }
+
+  .stakeholder-node--1 { --node-x: 50%; --node-y: 8%; }
+  .stakeholder-node--2 { --node-x: 74.7%; --node-y: 16%; }
+  .stakeholder-node--3 { --node-x: 89.9%; --node-y: 37%; }
+  .stakeholder-node--4 { --node-x: 89.9%; --node-y: 63%; }
+  .stakeholder-node--5 { --node-x: 74.7%; --node-y: 84%; }
+  .stakeholder-node--6 { --node-x: 50%; --node-y: 92%; }
+  .stakeholder-node--7 { --node-x: 25.3%; --node-y: 84%; }
+  .stakeholder-node--8 { --node-x: 10.1%; --node-y: 63%; }
+  .stakeholder-node--9 { --node-x: 10.1%; --node-y: 37%; }
+  .stakeholder-node--10 { --node-x: 25.3%; --node-y: 16%; }
 }
 
 @media (max-width: 380px) {
   .stakeholder-map {
     width: 100%;
-    height: 520px;
+    height: auto;
+    aspect-ratio: 1;
   }
 
   .stakeholder-center {
@@ -484,7 +500,7 @@
 
   .stakeholder-node {
     width: 65px;
-    font-size: 0.58rem;
+    font-size: 0.55rem;
   }
 }
 
