@@ -10,6 +10,7 @@ function init() {
   initValuesSlider();
   initSiteHeader();
   initFlipCards();
+  initStakeholderNodes();
   initJourney();
   initInternalLinks();
 }

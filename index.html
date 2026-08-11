@@ -24,6 +24,7 @@
   <script src="js/valori.js" defer></script>
   <script src="js/header.js" defer></script>
   <script src="js/materialita.js" defer></script>
+  <script src="js/stakeholder.js" defer></script>
   <script src="js/percorso.js" defer></script>
   <script src="js/main.js" defer></script>
 </head>
@@ -491,16 +492,35 @@
               decoding="async"
             />
           </div>
-          <p>Dialogo e valore condiviso</p>
+          <div class="stakeholder-center-copy" aria-live="polite">
+            <p class="stakeholder-center-default">Dialogo e valore condiviso</p>
+            <div class="stakeholder-center-kpi" aria-hidden="true">
+              <strong></strong>
+              <span></span>
+              <small></small>
+            </div>
+          </div>
         </div>
 
         <ul class="stakeholder-nodes" aria-label="Principali stakeholder">
-          <li class="stakeholder-node stakeholder-node--1"><span>Clienti</span></li>
-          <li class="stakeholder-node stakeholder-node--2"><span>Consumatori</span></li>
-          <li class="stakeholder-node stakeholder-node--3"><span>Dipendenti</span></li>
-          <li class="stakeholder-node stakeholder-node--4"><span>Allevatori</span></li>
-          <li class="stakeholder-node stakeholder-node--5"><span>Fornitori</span></li>
-          <li class="stakeholder-node stakeholder-node--6"><span>Comunità locali</span></li>
+          <li class="stakeholder-node stakeholder-node--1 stakeholder-node--interactive" data-kpi-value="106" data-kpi-label="visite di clienti e auditor" data-kpi-year="2024">
+            <button class="stakeholder-node-button" type="button" aria-expanded="false">Clienti</button>
+          </li>
+          <li class="stakeholder-node stakeholder-node--2 stakeholder-node--interactive" data-kpi-value="&gt;1.700" data-kpi-label="segnalazioni gestite" data-kpi-year="2024">
+            <button class="stakeholder-node-button" type="button" aria-expanded="false">Consumatori</button>
+          </li>
+          <li class="stakeholder-node stakeholder-node--3 stakeholder-node--interactive" data-kpi-value="7 ore" data-kpi-label="di formazione pro capite" data-kpi-year="2024">
+            <button class="stakeholder-node-button" type="button" aria-expanded="false">Dipendenti</button>
+          </li>
+          <li class="stakeholder-node stakeholder-node--4 stakeholder-node--interactive" data-kpi-value="&gt;1.900" data-kpi-label="ore di formazione" data-kpi-year="2024">
+            <button class="stakeholder-node-button" type="button" aria-expanded="false">Allevatori</button>
+          </li>
+          <li class="stakeholder-node stakeholder-node--5 stakeholder-node--interactive" data-kpi-value="90%" data-kpi-label="della spesa verso l'Italia" data-kpi-year="2024">
+            <button class="stakeholder-node-button" type="button" aria-expanded="false">Fornitori</button>
+          </li>
+          <li class="stakeholder-node stakeholder-node--6 stakeholder-node--interactive" data-kpi-value="139 mila €" data-kpi-label="destinati alla comunità" data-kpi-year="2023">
+            <button class="stakeholder-node-button" type="button" aria-expanded="false">Comunità locali</button>
+          </li>
           <li class="stakeholder-node stakeholder-node--7"><span>ONG</span></li>
           <li class="stakeholder-node stakeholder-node--8"><span>Media</span></li>
           <li class="stakeholder-node stakeholder-node--9"><span>Azionisti</span></li>

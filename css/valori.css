@@ -16,6 +16,22 @@
   overflow-x: clip;
   background:
     radial-gradient(
+      circle at -5% 72%,
+      transparent 0 210px,
+      rgba(42, 111, 58, 0.11) 211px 212px,
+      transparent 213px 238px,
+      rgba(255, 255, 255, 0.28) 239px 240px,
+      transparent 241px
+    ),
+    radial-gradient(
+      circle at 105% 24%,
+      transparent 0 165px,
+      rgba(242, 201, 76, 0.15) 166px 167px,
+      transparent 168px 193px,
+      rgba(42, 111, 58, 0.07) 194px 195px,
+      transparent 196px
+    ),
+    radial-gradient(
       circle at 12% 18%,
       rgba(242, 201, 76, 0.16),
       transparent 26%
@@ -338,7 +354,14 @@
 
   .valori-back {
     padding: 2rem 1.5rem;
-    justify-content: flex-start;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .valori-back h3,
+  .valori-back p {
+    text-align: center;
   }
 
   .valori-btn {

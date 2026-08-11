@@ -156,6 +156,27 @@ function initValuesSlider() {
       }
     );
   });
+
+  if ('IntersectionObserver' in window) {
+    const cardVisibilityObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (
+            !entry.isIntersecting &&
+            entry.target.classList.contains('open')
+          ) {
+            entry.target.classList.remove('open');
+            updateCardAccessibility(entry.target, false);
+          }
+        });
+      },
+      { threshold: 0 }
+    );
+
+    cards.forEach((card) => {
+      cardVisibilityObserver.observe(card);
+    });
+  }
 }
 
 
