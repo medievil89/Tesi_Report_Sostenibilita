@@ -1,12 +1,40 @@
 ﻿'use strict';
 
 /* ========================================
-   Flip card — Supporto tastiera
+   Card materialità — reveal al click
 ======================================== */
 
 function initFlipCards() {
   const flipCards =
     document.querySelectorAll('.flip-card');
+
+  function setCardState(card, isOpen) {
+    const front = card.querySelector('.card-front');
+    const back = card.querySelector('.card-back');
+
+    card.classList.toggle('open', isOpen);
+    card.setAttribute('aria-expanded', String(isOpen));
+
+    const cardTitle = front
+      ?.querySelector('h3')
+      ?.textContent.trim();
+
+    if (cardTitle) {
+      card.setAttribute(
+        'aria-label',
+        `${isOpen ? 'Chiudi' : 'Approfondisci'}: ${cardTitle}`
+      );
+    }
+
+    front?.setAttribute('aria-hidden', String(isOpen));
+    back?.setAttribute('aria-hidden', String(!isOpen));
+  }
+
+  function closeAllCards() {
+    flipCards.forEach((card) => {
+      setCardState(card, false);
+    });
+  }
 
   flipCards.forEach((card, index) => {
     const front =
@@ -34,6 +62,17 @@ function initFlipCards() {
       'false'
     );
 
+    const cardTitle = front
+      ?.querySelector('h3')
+      ?.textContent.trim();
+
+    if (cardTitle) {
+      card.setAttribute(
+        'aria-label',
+        `Approfondisci: ${cardTitle}`
+      );
+    }
+
     front?.setAttribute(
       'aria-hidden',
       'false'
@@ -44,24 +83,16 @@ function initFlipCards() {
       'true'
     );
 
-    function toggleFlipCard() {
-      const isOpen =
-        card.classList.toggle('open');
+    function toggleCard() {
+      const willOpen = !card.classList.contains('open');
 
-      card.setAttribute(
-        'aria-expanded',
-        String(isOpen)
-      );
+      flipCards.forEach((otherCard) => {
+        if (otherCard !== card) {
+          setCardState(otherCard, false);
+        }
+      });
 
-      front?.setAttribute(
-        'aria-hidden',
-        String(isOpen)
-      );
-
-      back?.setAttribute(
-        'aria-hidden',
-        String(!isOpen)
-      );
+      setCardState(card, willOpen);
     }
 
     card.addEventListener(
@@ -72,21 +103,55 @@ function initFlipCards() {
           event.key === ' '
         ) {
           event.preventDefault();
-          toggleFlipCard();
+          toggleCard();
+        }
+
+        if (event.key === 'Escape') {
+          setCardState(card, false);
         }
       }
     );
 
     card.addEventListener('click', () => {
-      const touchLikeDevice = window.matchMedia(
-        '(hover: none), (pointer: coarse)'
-      ).matches;
-
-      if (touchLikeDevice) {
-        toggleFlipCard();
-      }
+      toggleCard();
     });
   });
+
+  document.addEventListener('click', (event) => {
+    const clickedCard = event.target instanceof Element
+      ? event.target.closest('.flip-card')
+      : null;
+
+    if (!clickedCard) {
+      closeAllCards();
+    }
+  });
+
+  window.addEventListener('hashchange', () => {
+    if (window.location.hash !== '#materialita') {
+      closeAllCards();
+    }
+  });
+
+  if ('IntersectionObserver' in window) {
+    const cardVisibilityObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (
+            !entry.isIntersecting &&
+            entry.target.classList.contains('open')
+          ) {
+            setCardState(entry.target, false);
+          }
+        });
+      },
+      { threshold: 0 }
+    );
+
+    flipCards.forEach((card) => {
+      cardVisibilityObserver.observe(card);
+    });
+  }
 }
 
 

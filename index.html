@@ -24,6 +24,7 @@
   <script src="js/valori.js" defer></script>
   <script src="js/header.js" defer></script>
   <script src="js/materialita.js" defer></script>
+  <script src="js/percorso.js" defer></script>
   <script src="js/main.js" defer></script>
 </head>
 
@@ -78,6 +79,8 @@
       <div class="hero-overlay"></div>
 
       <div class="container hero-inner">
+        <p class="hero-eyebrow">Report di sostenibilità</p>
+
         <h1>
           Una filiera integrata.<br>
           <span>Un futuro più sostenibile.</span>
@@ -122,6 +125,7 @@
         <p class="small">
           I temi considerati prioritari dal Gruppo Veronesi e dai suoi stakeholder secondo l’analisi di materialità.
         </p>
+        <p class="cards-instruction">Seleziona un tema per approfondire</p>
 
         <div class="cards-container">
           <article class="flip-card">
@@ -221,62 +225,86 @@
     <div class="section-divider" aria-hidden="true"></div>
 
     <!-- IL NOSTRO PERCORSO -->
-    <section id="percorso" class="container section" aria-labelledby="percorso-title">
-      <h2 id="percorso-title">Il Nostro Percorso</h2>
-      <div class="timeline">
-        <article class="timeline-item left">
-          <div class="timeline-content">
-            <time datetime="2018">2018</time>
-            <h3>Avvio del percorso di sostenibilità</h3>
-            <p>Il Gruppo avvia un percorso strutturato dedicato alla sostenibilità ambientale, sociale ed economica.</p>
-          </div>
-        </article>
+    <section id="percorso" aria-labelledby="percorso-title">
+      <header class="journey-intro">
+        <p class="journey-eyebrow">Dal 2018 a oggi</p>
+        <h2 id="percorso-title">Il Nostro Percorso</h2>
+        <p>Un impegno cresciuto nel tempo, dall’ascolto degli stakeholder a risultati concreti e misurabili.</p>
+        <span class="journey-scroll-hint" aria-hidden="true">Scorri per esplorare <b>↓</b></span>
+      </header>
 
-        <article class="timeline-item right">
-          <div class="timeline-content">
-            <time datetime="2022">2022</time>
-            <h3>Aggiornamento dell’analisi di materialità</h3>
-            <p>Vengono riesaminati gli impatti positivi e negativi del Gruppo e confermati i temi prioritari per l’azienda e i suoi stakeholder.</p>
-          </div>
-        </article>
+      <div class="journey-layout">
+        <nav class="journey-nav" aria-label="Tappe del percorso di sostenibilità">
+          <div class="journey-track" aria-hidden="true"><span></span></div>
+          <button type="button" data-journey-step="0" aria-current="step"><span>2018</span><small>L’inizio</small></button>
+          <button type="button" data-journey-step="1"><span>2022</span><small>L’ascolto</small></button>
+          <button type="button" data-journey-step="2"><span>2023</span><small>La governance</small></button>
+          <button type="button" data-journey-step="3"><span>2024</span><small>I risultati</small></button>
+          <p class="journey-counter" aria-live="polite">Tappa <strong>1</strong> di 4</p>
+        </nav>
 
-        <article class="timeline-item left">
-          <div class="timeline-content">
-            <time datetime="2023">2023</time>
-            <h3>Rafforzamento Governance</h3>
-            <p>Viene individuato un Responsabile CSR incaricato di coordinare e sviluppare il percorso di sostenibilità aziendale.</p>
-          </div>
-        </article>
+        <div class="journey-stories">
+          <article id="journey-2018" class="journey-step is-active" data-journey-panel="0">
+            <img class="journey-image" src="assets/percorso/percorso-2018.png" alt="" width="1536" height="1024" loading="lazy" decoding="async" />
+            <div class="journey-copy">
+              <p class="journey-kicker">01 · Le fondamenta</p>
+              <time datetime="2018">2018</time>
+              <h3>Avvio del percorso di sostenibilità</h3>
+              <p>Il Gruppo avvia un percorso strutturato dedicato alla sostenibilità ambientale, sociale ed economica.</p>
+            </div>
+          </article>
 
-        <article class="timeline-item right">
-          <div class="timeline-content">
-            <time datetime="2024">2024</time>
-            <h3>Studio capacità di sequestro della CO₂</h3>
-            <p>Con il Consiglio Nazionale delle Ricerche viene realizzato uno studio sulla capacità di sequestro della CO₂ delle alberature presenti nei siti e nei terreni di proprietà.</p>
-          </div>
-        </article>
+          <article id="journey-2022" class="journey-step" data-journey-panel="1">
+            <img class="journey-image" src="assets/percorso/percorso-2022.png" alt="" width="1536" height="1024" loading="lazy" decoding="async" />
+            <div class="journey-copy">
+              <p class="journey-kicker">02 · Le priorità</p>
+              <time datetime="2022">2022</time>
+              <h3>L’ascolto degli stakeholder</h3>
+              <p>Il Gruppo aggiorna l’analisi di materialità, riesamina i propri impatti e conferma i temi prioritari per l’azienda e i suoi stakeholder.</p>
+            </div>
+          </article>
 
-        <article class="timeline-item left">
-          <div class="timeline-content">
-            <time datetime="2024">2024</time>
-            <h3>Energia rinnovabile ed emissioni evitate</h3>
-            <p>Gli otto impianti fotovoltaici e l’impianto solare termico consentono al Gruppo di evitare l’emissione di 404 tonnellate di CO₂.</p>
-          </div>
-        </article>
-      </div>
-    </section>
+          <article id="journey-2023" class="journey-step" data-journey-panel="2">
+            <img class="journey-image" src="assets/percorso/percorso-2023.png" alt="" width="1536" height="1024" loading="lazy" decoding="async" />
+            <div class="journey-copy">
+              <p class="journey-kicker">03 · La responsabilità</p>
+              <time datetime="2023">2023</time>
+              <h3>Una governance dedicata</h3>
+              <p>Viene individuato un Responsabile CSR incaricato di coordinare, consolidare e sviluppare il percorso di sostenibilità aziendale.</p>
+            </div>
+          </article>
 
-    <!-- AZIONI CONCRETE -->
-    <section class="container actions-wrapper" aria-labelledby="actions-title">
-        <div class="actions-section">
-            <h2 id="actions-title">Azioni Concrete e Metriche</h2>
-            <ul class="actions-list">
-                <li><strong>Packaging riciclabile al 95%</strong> - premiato per la sostenibilità dalla World Packaging Organization.</li>
-                <li><strong>Circa 2.100 ore di formazione</strong> a beneficio di circa 1.200 allevatori.</li>
-                <li>Evitata l'emissione di <strong>404 tonnellate di CO2</strong> nell'ambiente nel 2024.</li>
-                <li><strong>154 nuovi dipendenti under 30</strong> assunti nel 2024.</li>
-            </ul>
+          <article id="journey-2024" class="journey-step journey-step--final" data-journey-panel="3">
+            <img class="journey-image" src="assets/percorso/percorso-2024.png" alt="" width="1536" height="1024" loading="lazy" decoding="async" />
+            <div class="journey-copy">
+              <p class="journey-kicker">04 · Dalla ricerca all’impatto</p>
+              <time datetime="2024">2024</time>
+              <h3>Risultati concreti e misurabili</h3>
+              <div class="journey-outcomes">
+                <div>
+                  <strong>Ricerca con il CNR</strong>
+                  <p>Uno studio misura la capacità di sequestro della CO₂ delle alberature presenti nei siti e nei terreni di proprietà.</p>
+                </div>
+                <div>
+                  <strong>Energia rinnovabile</strong>
+                  <p>Otto impianti fotovoltaici e un impianto solare termico contribuiscono a ridurre le emissioni del Gruppo.</p>
+                </div>
+              </div>
+            </div>
+          </article>
         </div>
+      </div>
+
+      <section class="journey-results" aria-labelledby="actions-title">
+        <p class="journey-eyebrow">Il percorso oggi</p>
+        <h2 id="actions-title">Azioni Concrete e Metriche</h2>
+        <div class="journey-metrics">
+          <article><strong>95%</strong><p>Packaging riciclabile, premiato dalla World Packaging Organization.</p></article>
+          <article><strong>2.100</strong><p>Ore di formazione per circa 1.200 allevatori.</p></article>
+          <article><strong>404 t</strong><p>Emissioni di CO₂ evitate nel 2024.</p></article>
+          <article><strong>154</strong><p>Nuovi dipendenti under 30 assunti nel 2024.</p></article>
+        </div>
+      </section>
     </section>
 
     <!-- I VALORI DEL GRUPPO -->
